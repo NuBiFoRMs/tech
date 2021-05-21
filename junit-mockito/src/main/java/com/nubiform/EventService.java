@@ -2,6 +2,12 @@ package com.nubiform;
 
 public class EventService {
 
+    public EventService(EmailSender emailSender) {
+        this.emailSender = emailSender;
+    }
+
+    private final EmailSender emailSender;
+
     public Event createEvent(String title) {
         Event event = new Event();
         event.setTitle(title);
@@ -10,7 +16,6 @@ public class EventService {
     }
 
     public boolean sendEmailEvent(Event event) {
-        EmailSender emailSender = new EmailSender();
         return emailSender.send(event.getTitle());
     }
 }

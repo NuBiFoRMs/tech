@@ -5,7 +5,7 @@ public class App {
     public static void main(String[] args) {
         String eventTitle = "My event";
 
-        EventService eventService = new EventService();
+        EventService eventService = new EventService(new EmailSender());
 
         // create event
         Event event = eventService.createEvent(eventTitle);

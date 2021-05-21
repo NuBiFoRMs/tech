@@ -12,7 +12,7 @@ class EventServiceTest {
     @BeforeEach
     public void setUp() {
         // arrange
-        eventService = new EventService();
+        eventService = new EventService(new EmailSender());
     }
 
     @Test
