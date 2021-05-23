@@ -1,8 +1,7 @@
 package com.nubiform;
 
-import com.sun.tools.javac.util.List;
-
-import java.util.Collections;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MyObject {
 
@@ -18,7 +17,11 @@ public class MyObject {
 
     public List getListObject(int value) {
         System.out.println("getListObject");
-        return List.of(value);
+
+        List<Integer> result = new ArrayList<>();
+        result.add(value);
+
+        return result;
     }
 
     public Object getObject (int value) {

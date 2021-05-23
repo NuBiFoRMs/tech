@@ -7,6 +7,9 @@ import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 import sun.jvm.hotspot.gc_interface.GCWhen;
 
+import java.util.Collections;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.*;
@@ -30,6 +33,9 @@ class MyObjectTest {
         boolean trueOrFalseValue = spyObject.getTrueOrFalseValue(1);
         assertTrue(trueOrFalseValue);
 
+        List listObject = spyObject.getListObject(1);
+        assertNotNull(listObject);
+
         verify(spyObject, atLeast(1)).getIntValue(anyInt());
         verify(spyObject, atLeast(1)).getTrueOrFalseValue(anyInt());
     }
@@ -43,6 +49,9 @@ class MyObjectTest {
 
         boolean trueOrFalseValue = mockObject.getTrueOrFalseValue(1);
         assertFalse(trueOrFalseValue);
+
+        List listObject = mockObject.getListObject(1);
+        assertEquals(Collections.emptyList(), listObject);
 
         verify(mockObject, atLeast(1)).getIntValue(anyInt());
         verify(mockObject, atLeast(1)).getTrueOrFalseValue(anyInt());
