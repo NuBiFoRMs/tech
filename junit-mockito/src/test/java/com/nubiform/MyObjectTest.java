@@ -9,7 +9,7 @@ import sun.jvm.hotspot.gc_interface.GCWhen;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyInt;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class MyObjectTest {
@@ -29,6 +29,9 @@ class MyObjectTest {
 
         boolean trueOrFalseValue = spyObject.getTrueOrFalseValue(1);
         assertTrue(trueOrFalseValue);
+
+        verify(spyObject, atLeast(1)).getIntValue(anyInt());
+        verify(spyObject, atLeast(1)).getTrueOrFalseValue(anyInt());
     }
 
     @Test
@@ -40,5 +43,8 @@ class MyObjectTest {
 
         boolean trueOrFalseValue = mockObject.getTrueOrFalseValue(1);
         assertFalse(trueOrFalseValue);
+
+        verify(mockObject, atLeast(1)).getIntValue(anyInt());
+        verify(mockObject, atLeast(1)).getTrueOrFalseValue(anyInt());
     }
 }
