@@ -49,7 +49,7 @@ Mock 객체는 호출에 대한 기대를 명세하고, 해당 내용에 따라 
 ## Mockito와 행위 기반 테스트
 
 Mockito는 Stub 작성과 Verify가 중심을 이룬다.
-``
+
 CreateMock : 인터페이스에 해당하는 Mock 객체 생성
 
 Stub : 필요한 경우 테스트에 필요한 Mock 객체의 동작 지정
