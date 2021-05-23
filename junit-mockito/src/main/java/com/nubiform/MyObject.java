@@ -15,7 +15,7 @@ public class MyObject {
         return value;
     }
 
-    public List getListObject(int value) {
+    public List<Integer> getListObject(int value) {
         System.out.println("getListObject");
 
         List<Integer> result = new ArrayList<>();

@@ -32,7 +32,7 @@ class MyObjectTest {
         boolean trueOrFalseValue = spyObject.getTrueOrFalseValue(1);
         assertTrue(trueOrFalseValue);
 
-        List listObject = spyObject.getListObject(1);
+        List<Integer> listObject = spyObject.getListObject(1);
         assertNotNull(listObject);
 
         verify(spyObject, atLeast(1)).getIntValue(anyInt());
@@ -49,7 +49,7 @@ class MyObjectTest {
         boolean trueOrFalseValue = mockObject.getTrueOrFalseValue(1);
         assertFalse(trueOrFalseValue);
 
-        List listObject = mockObject.getListObject(1);
+        List<Integer> listObject = mockObject.getListObject(1);
         assertEquals(Collections.emptyList(), listObject);
 
         verify(mockObject, atLeast(1)).getIntValue(anyInt());
